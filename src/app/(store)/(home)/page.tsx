@@ -24,10 +24,10 @@ export default async function Home() {
   const [highlightedProcutd, ...otherProduts] = await getFeaturedProducts()
 
   return (
-    <div className="grid max-h-[860px] grid-cols-9 grid-rows-6 gap-6">
+    <div className="grid lg:max-h-[860px] grid-cols-1 lg:grid-cols-9 grid-rows-1 lg:grid-rows-6 gap-6">
       <Link
         href={`/product/${highlightedProcutd.slug}`}
-        className="group relative col-span-6 row-span-6 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
+        className="group relative col-span-1 lg:col-span-6 row-span-1 lg:row-span-6 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
       >
         <Image
           src={highlightedProcutd.image}
@@ -38,7 +38,7 @@ export default async function Home() {
           className="group-hover:scale-105 transition-transform duration-500"
         />
 
-        <div className="absolute bottom-28 right-28 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
+        <div className="absolute bottom-5 right-5 lg:bottom-28 lg:right-28 h-12 flex items-center gap-2 lg:max-w-[280px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
           <span className="text-sm truncate">{highlightedProcutd.title}</span>
           <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">
             {highlightedProcutd.price.toLocaleString('pt-BR', {
@@ -54,7 +54,7 @@ export default async function Home() {
         <Link
           key={product.id}
           href={`/product/${product.slug}`}
-          className="group relative col-span-3 row-span-3 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
+          className="group relative col-span-1 lg:col-span-3 row-span-1 lg:row-span-3 rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
         >
           <Image
             src={product.image}
